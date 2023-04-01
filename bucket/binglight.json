@@ -1,0 +1,22 @@
+{
+    "description": "A lightweight new Bing (AI chat) desktop application which based on Tauri",
+    "homepage": "https://github.com/I-Info/BingLite",
+    "license": "MIT",
+    "version": "0.1.1",
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/I-Info/BingLite/releases/download/v$version/BingLite_$version_x64_en-US.msi",
+        "hash": {
+            "mode": "download"
+        }
+    },
+    "url": "https://github.com/I-Info/BingLite/releases/download/v0.1.1/BingLite_0.1.1_x64_en-US.msi",
+    "hash": "6e335a01b0c1dd67bd692aa0511150b024b171fd6995a039afd1195275256676",
+    "shortcuts": [
+        [
+            "BingLite.exe",
+            "BingLite"
+        ]
+    ],
+    "extract_dir": "PFiles\\BingLite"
+}

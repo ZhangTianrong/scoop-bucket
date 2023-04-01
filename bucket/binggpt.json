@@ -12,7 +12,6 @@
     },
     "url": "https://github.com/dice2o/BingGPT/releases/download/v0.3.2/BingGPT-0.3.2-win32-x64.zip",
     "hash": "fb877266d05d348a659c554aefb8367cc7b031e44749310d8d2470d254b45d26",
-    "extract_dir": ".",
     "shortcuts": [
         [
             "BingGPT.exe",
