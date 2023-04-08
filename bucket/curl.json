@@ -1,0 +1,72 @@
+{
+    "version": "8.0.1_6",
+    "description": "Command line tool and library for transferring data with URLs",
+    "homepage": "https://curl.se/",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://curl.se/windows/dl-8.0.1_6/curl-8.0.1_6-win64-mingw.tar.xz",
+            "hash": "c11481d19a79111e940320c5c965feb049e11499c6d4122dd486c5ff25a9ead8",
+            "extract_dir": "curl-8.0.1_6-win64-mingw"
+        },
+        "32bit": {
+            "url": "https://curl.se/windows/dl-8.0.1_6/curl-8.0.1_6-win32-mingw.tar.xz",
+            "hash": "71418b78cc21c274590debac6f5656285198b4f0bf77e2074480580e832569f2",
+            "extract_dir": "curl-8.0.1_6-win32-mingw"
+        },
+        "arm64": {
+            "url": "https://curl.se/windows/dl-8.0.1_6/curl-8.0.1_6-win64a-mingw.tar.xz",
+            "hash": "ae334bd418a8f981eb888b17ad1342748fbde1365e669bd15192057462bd3d03",
+            "extract_dir": "curl-8.0.1_6-win64a-mingw"
+        }
+    },
+    "bin": "bin\\curl.exe",
+    "checkver": {
+        "url": "https://curl.se/windows/",
+        "regex": "Build<\\/b>:\\s+([\\d._]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://curl.se/windows/dl-$version/curl-$version-win64-mingw.tar.xz",
+                "extract_dir": "curl-$version-win64-mingw"
+            },
+            "32bit": {
+                "url": "https://curl.se/windows/dl-$version/curl-$version-win32-mingw.tar.xz",
+                "extract_dir": "curl-$version-win32-mingw"
+            },
+            "arm64": {
+                "url": "https://curl.se/windows/dl-$version/curl-$version-win64a-mingw.tar.xz",
+                "extract_dir": "curl-$version-win64a-mingw"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/hashes.txt",
+            "regex": "SHA2-256\\($basename\\)=\\s+$sha256"
+        }
+    },
+    "post_install": [
+        "if (Test-Path \"$persist_dir\\curl-ca-bundle.crt\") {",
+        "	$diff = Compare-Object $(Get-Content \"$persist_dir\\curl-ca-bundle.crt\") $(Get-Content \"$dir\\bin\\curl-ca-bundle.crt\")",
+        "	if (!($null -eq $diff)) {",
+        "		$resolved = $false",
+        "		$options = \"&Keep persisted certificates\", \"&Overwrite with new certificates\", \"&Examine difference\"",
+        "		while (!$resolved) {",
+        "			$choice = $Host.UI.PromptForChoice(\"Detected change in curl-ca-bundle.crt\", $null, $options, 0)",
+        "			switch ($choice) {",
+        "				0 { Copy-Item \"$persist_dir\\curl-ca-bundle.crt\" \"$dir\\bin\\curl-ca-bundle.crt\" ; $resolved = $true; break }",
+        "				1 { $resolved = $true; break }",
+        "				2 { Write-Output \"<=: persisted certificates`n=>: new certificates\"; $diff | Out-String | Write-Output ; break }",
+        "			}",
+        "		}",
+        "	}",
+        "}"
+    ],
+    "pre_uninstall": [
+        "# Persist manually curl-ca-bundle.crt",
+        "if (Test-Path \"$dir\\bin\\curl-ca-bundle.crt\") {",
+        "    ensure \"$persist_dir\" | Out-Null",
+        "    Copy-Item \"$dir\\bin\\curl-ca-bundle.crt\" \"$persist_dir\\\" -Force -Recurse",
+        "}"
+    ]
+}
