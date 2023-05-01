@@ -68,5 +68,10 @@
             "ReNamer.exe",
             "ReNamer"
         ]
-    ]
+    ],
+    "persist": [
+        "Settings.ini",
+        "Presets"
+    ],
+    "bin": "ReNamer.exe"
 }
