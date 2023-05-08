@@ -45,6 +45,7 @@
         "}"
     ],
     "notes": [
+        "In case a warning about context menu item is not installed is shown:",
         "Run install_contextmenu.reg to add tagfolder to the context menu. A rerun is required after updating tagfolder.",
         "Run uninstall_contextmenu.reg to remove tagfolder from the context menu. Remember to run this before uninstalling."
     ],
