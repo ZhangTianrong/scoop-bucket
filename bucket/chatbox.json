@@ -15,5 +15,11 @@
     },
     "extract_dir": "PFiles\\chatbox",
     "url": "https://github.com/Bin-Huang/chatbox/releases/download/Chatbox-v0.4.2/chatbox_0.4.2_x64_en-US.msi",
-    "hash": "60deb90e6b0f30c18be5b3d4f2743786b799287c2bf366509cefb474a5fe563c"
+    "hash": "60deb90e6b0f30c18be5b3d4f2743786b799287c2bf366509cefb474a5fe563c",
+    "shortcuts": [
+        [
+            "chatbox.exe",
+            "ChatGPT"
+        ]
+    ]
 }
