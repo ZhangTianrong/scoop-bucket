@@ -13,6 +13,7 @@
     "bin": "v.exe",
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/vlang/v/releases/download/$version/v_windows.zip"
+        "url": "https://github.com/vlang/v/releases/download/$version/v_windows.zip",
+        "hash": "download"
     }
 }
