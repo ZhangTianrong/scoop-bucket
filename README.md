@@ -32,3 +32,6 @@ Install apps from this bucket with below command:
 scoop install ztr/<app_name>
 ```
 
+## Note
+
+Currently, only x64 architecture is supported.
