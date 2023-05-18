@@ -42,6 +42,7 @@
     ],
     "notes": [
         "The configuration file is located at %AppData%\\ntfy\\client.yml",
+        "It will not be automatically removed during uninstallation even with -p flag. Delete them manually if needed.",
         "A symbolic link mirror of the configuration file is located at %USERPROFILE%\\.config\\ntfy\\client.yml"
     ]
 }
