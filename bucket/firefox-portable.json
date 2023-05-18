@@ -44,5 +44,9 @@
             }
         },
         "changelog": "https://www.mozilla.org/en-US/firefox/$version/releasenotes/"
-    }
+    },
+    "notes": [
+        "User profiles are located in %USERPROFILE%\\AppData\\Local\\Mozilla\\Firefox\\Profiles",
+        "A new profiler is always created when a new version is installed. Go to about:profiles to revert to an old profile if needed."
+    ]
 }
