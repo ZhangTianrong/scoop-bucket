@@ -22,21 +22,23 @@
             "Start-Process \"$dir\\installer.exe\" -Wait -Verb \"RunAs\" -Args \"-H -P \"\"$dir\\Install\"\"\"",
             "Remove-Item \"$dir\\installer.exe\" -Force",
             "Move-Item \"C:\\Windows\\BCUnInstall.exe\" \"$dir\\uninstaller.exe\" -Force | Out-Null",
-            "Move-Item \"$Env:ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\BCArchive 2.0\" $dir\\Shortcuts -Force | Out-Null"
+            "New-Item -ItemType SymbolicLink -Path \"C:\\Windows\\BCUnInstall.exe\" -Target \"$dir\\uninstaller.exe\" -Force | Out-Null",
+            "Move-Item \"$Env:ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\BCArchive 2.0\" \"$dir\\Shortcuts\" -Force | Out-Null"
         ]
     },
     "uninstaller": {
         "script": [
             "if (-not (is_admin)) { error 'Administrator privileges are needed for uninstallation'; break }",
+            "Move-Item \"$dir\\uninstaller.exe\" \"C:\\Windows\\BCUnInstall.exe\" -Force | Out-Null",
             "Move-Item \"$dir\\Shortcuts\" \"$Env:ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\BCArchive 2.0\"",
-            "Start-Process \"$dir\\uninstaller.exe\" -Wait -Verb \"RunAs\" -Args \"\"\"$dir\\Install\\UnInstall.log\"\" -d -h\"",
+            "Start-Process \"C:\\Windows\\BCUnInstall.exe\" -Wait -Verb \"RunAs\" -Args \"$dir\\Install\\UnInstall.log -d -h\"",
             "Write-Host \"Please reboot at the earliest convenience to finish the uninstallation. A reinstallation is not possible before that.\""
         ]
     },
     "shortcuts": [
         [
-            "BCArchive",
-            "Install\\BCArchive.exe"
+            "Install\\BCArchive.exe",
+            "BCArchive"
         ]
     ]
 }
