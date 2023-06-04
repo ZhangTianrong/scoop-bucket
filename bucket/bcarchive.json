@@ -21,7 +21,8 @@
             "mkdir \"$dir\\Install\" | Out-Null",
             "Start-Process \"$dir\\installer.exe\" -Wait -Verb \"RunAs\" -Args \"-H -P \"\"$dir\\Install\"\"\"",
             "Remove-Item \"$dir\\installer.exe\" -Force",
-            "Move-Item \"C:\\Windows\\BCUnInstall.exe\" \"$dir\\uninstaller.exe\" -Force | Out-Null"
+            "Move-Item \"C:\\Windows\\BCUnInstall.exe\" \"$dir\\uninstaller.exe\" -Force | Out-Null",
+            "Remove-Item \"$Env:ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\BCArchive 2.0\" -Recurse -Force | Out-Null"
         ]
     },
     "uninstaller": {
@@ -34,7 +35,7 @@
     "shortcuts": [
         [
             "BCArchive",
-            "BCArchive.exe"
+            "Install\\BCArchive.exe"
         ]
     ]
 }
