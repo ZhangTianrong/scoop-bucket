@@ -28,7 +28,13 @@
         "script": [
             "if (-not (is_admin)) { error 'Administrator privileges are needed for uninstallation'; break }",
             "Start-Process \"$dir\\uninstaller.exe\" -Wait -Verb \"RunAs\" -Args \"\"\"$dir\\bin\\UnInstall.log\"\" -d -h\"",
-            "Write-Host \"Please reboot at the earliest convenience to finish the uninstallation.\""
+            "Write-Host \"Please reboot at the earliest convenience to finish the uninstallation. A reinstallation is not possible before that.\""
         ]
-    }
+    },
+    "shortcuts": [
+        [
+            "BCArchive",
+            "BCArchive.exe"
+        ]
+    ]
 }
