@@ -1,0 +1,23 @@
+{
+    "description": "Clock popup every half hour.",
+    "homepage": "https://github.com/hoothin/RustClock",
+    "license": "MIT",
+    "version": "0.1.4",
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/hoothin/RustClock/releases/download/$version/RustClock_$version_win64.zip",
+        "hash": {
+            "mode": "download"
+        }
+    },
+    "url": "https://github.com/hoothin/RustClock/releases/download/0.1.4/RustClock_0.1.4_win64.zip",
+    "hash": "f843ccf190eb36b52bdaa98915439eceb4ad366dae950d58a151469f39d95445",
+    "shortcuts": [
+        [
+            "rust_clock.exe",
+            "RustClock"
+        ]
+    ],
+    "pre_install": "New-Item -Path \"$dir\\conf.ini\" | Out-Null",
+    "persist": "conf.ini"
+}
