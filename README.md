@@ -14,7 +14,7 @@
 | renamer-alt                                                  | Alternative manifest of renamer-pro with a wizard which allows users to download from Baidu manually if desired, which can be much quicker than baidupcs-go without valid subscription. |
 | [tag-folder](https://youtu.be/vyFhSdm4gD8)                   | A bat/powershell/vbs amalgam script for editing tags of folders through context menu. |
 | [tag-folder-alt](https://github.com/ChiotOnAGE/TagFolder)    | I implemented similar functionalities as tag-folder in C++ and made a number of improvements to usability and compatibility. |
-| [vlang](https://github.com/vlang/v)                          | V programming langauge. Pointing to the latest stable release on. |
+| [vlang](https://github.com/vlang/v)                          | V programming langauge. Pointing to the latest stable or weekly release hosted on GitHub. |
 
 
 
