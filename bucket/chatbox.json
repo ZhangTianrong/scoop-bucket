@@ -2,26 +2,35 @@
     "description": "Chatbox is a desktop app for GPT-4 / GPT-3.5 (OpenAI API)",
     "homepage": "https://github.com/Bin-Huang/chatbox",
     "license": "GPL-3.0-only",
-    "version": "0.5.6",
+    "version": "0.6.2",
     "checkver": {
         "url": "https://github.com/Bin-Huang/chatbox/releases/latest",
         "regex": "<h1[^>]*>Chatbox v(?<version>[\\d\\.]+)</h1>"
     },
     "autoupdate": {
-        "url": "https://github.com/Bin-Huang/chatbox/releases/download/v$version/chatbox_$version_x64_en-US.msi",
+        "url": "https://github.com/Bin-Huang/chatbox/releases/download/v$version/Chatbox-$version-Setup.exe#/setup.7z",
         "hash": {
             "mode": "download"
         }
     },
-    "extract_dir": "PFiles\\chatbox",
-    "url": "https://github.com/Bin-Huang/chatbox/releases/download/v0.5.6/chatbox_0.5.6_x64_en-US.msi",
-    "hash": "bb2eec8c697340fa1ba36db02cf5fc01359e93daa43386d2bef5b84bbde5ad7c",
+    "url": "https://github.com/Bin-Huang/chatbox/releases/download/v0.6.2/Chatbox-0.6.2-Setup.exe#/setup.7z",
+    "hash": "b08c50a6fd01b8990b026c6d0776a3a8d328275705ee6f52114efee552a2bb1e",
     "shortcuts": [
         [
-            "chatbox.exe",
+            "Chatbox.exe",
             "ChatGPT"
         ]
     ],
+    "installer": {
+        "script": [
+            "Move-Item -Path \"$dir\\`$PLUGINSDIR\\*\" -Destination $dir\\ -Force",
+            "Move-Item -Path \"$dir\\`$R0\\*\" -Destination $dir\\ -Force",
+            "Remove-Item -Path \"$dir\\`$PLUGINSDIR\" -Recurse -Force",
+            "Remove-Item -Path \"$dir\\`$R0\" -Recurse -Force",
+            "7z x -o\"$dir\" \"$dir\\app-64.7z\" -y | Out-Null",
+            "Remove-Item -Path \"$dir\\app-64.7z\" -Force"
+        ]
+    },
     "post_install": [
         "if (Get-Command magick -ErrorAction SilentlyContinue) {",
         "   Push-Location $dir",
