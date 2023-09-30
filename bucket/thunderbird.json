@@ -1,0 +1,94 @@
+{
+    "version": "115.3.1",
+    "description": "A free email application that’s easy to set up and customize.",
+    "homepage": "https://www.thunderbird.net",
+    "license": "MPL-2.0",
+    "notes": [
+        "By default the start menu shortcut \"Thunderbird\" launches Thunderbird with the *DEFAULT* profile as selected in 'Thunderbird Profile Manager'.",
+        "To set profile 'Scoop' as *DEFAULT*, or profiles/settings was lost after update:",
+        "  - Run 'Thunderbird Profile Manager', choose 'Scoop' then click 'Start Thunderbird'.",
+        "  - Visit 'about:profiles' page in Thunderbird to check *DEFAULT* profile.",
+        "For details: https://support.mozilla.org/en-US/kb/profile-manager-create-and-remove-thunderbird-profiles",
+        "To avoid losing profiles/settings after update and always launch Thunderbird with certain profile, create a file named '.use_persist_profile' in the persist directory.",
+        "Then, start menu shortcut \"Thunderbird\" launches Thunderbird with profile defined in the first line of it, while \"Thunderbird (Default)\" uses the *DEFAULT* profile.",
+        "You can further create a file named '.no_default_shortcut' in the persist directory to avoid creating the \"Thunderbird (Default)\" shortcut."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://archive.mozilla.org/pub/thunderbird/releases/115.3.1/win64/en-US/Thunderbird%20Setup%20115.3.1.exe#/dl.7z",
+            "hash": "sha512:f0ee25427b876e091a9c3f27f2d4c0eee63a8a377c136ad9bac7195d9bb82ad8fe5a679ba32f741be817e7c5e5e472be1f77dea05cb6c66263f6db811ee8ec71"
+        },
+        "32bit": {
+            "url": "https://archive.mozilla.org/pub/thunderbird/releases/115.3.1/win32/en-US/Thunderbird%20Setup%20115.3.1.exe#/dl.7z",
+            "hash": "sha512:4d6e519db15533c5e397dd1d98635b4544a0831e31191c63ab18f4ebc6286612fc4a0a7f84f8776c880651ffdf73e23893bce4cfddcd527fb20b8ec98511891f"
+        }
+    },
+    "extract_dir": "core",
+    "post_install": [
+        "thunderbird -CreateProfile \"Scoop $persist_dir\\profile\"",
+        "$Addition = \"$persist_dir\\addition\"",
+        "if (Test-Path $Addition) {",
+        "  info 'Copying additional items...'",
+        "  Copy-Item -Path $Addition\\* -Destination $dir -Force -Recurse -ErrorAction SilentlyContinue",
+        "}",
+        "if (Test-Path \"$persist_dir\\.use_persist_profile\") {",
+        "   $shortcutPath = Join-Path -Path (Convert-Path([System.IO.Path]::Combine([Environment]::GetFolderPath($global ? 'CommonStartMenu':'StartMenu'), 'Programs', 'Scoop Apps'))) -ChildPath 'Thunderbird.lnk'",
+        "   $defaultShortcutPath = Join-Path -Path (Convert-Path([System.IO.Path]::Combine([Environment]::GetFolderPath($global ? 'CommonStartMenu':'StartMenu'), 'Programs', 'Scoop Apps'))) -ChildPath 'Thunderbird (Default).lnk'",
+        "   if (-not (Test-Path \"$persist_dir\\.no_default_shortcut\")) {",
+        "       Copy-Item -Path $shortcutPath -Destination $defaultShortcutPath -Force -ErrorAction SilentlyContinue",
+        "   }",
+        "   $shortcut = (New-Object -ComObject WScript.Shell).CreateShortcut($shortcutPath)",
+        "   if ((Get-Content \"$persist_dir\\.use_persist_profile\").Length -eq 0) {",
+        "       $shortcut.Arguments = '-P \"Scoop\"'",
+        "   } else {",
+        "       $persistProfile = (Get-Content \"$persist_dir\\.use_persist_profile\" -First 1) -replace \"`n\", \"\" -replace \"`r\", \"\"",
+        "       $shortcut.Arguments = \"-P `\"$persistProfile`\"\"",
+        "   }",
+        "   $shortcut.Save()",
+        "}"
+    ],
+    "post_uninstall": [
+        "$defaultShortcutPath = Join-Path -Path (Convert-Path([System.IO.Path]::Combine([Environment]::GetFolderPath($global ? 'CommonStartMenu':'StartMenu'), 'Programs', 'Scoop Apps'))) -ChildPath 'Thunderbird (Default).lnk'",
+        "if (Test-Path $defaultShortcutPath) {",
+        "   Remove-Item -Path $defaultShortcutPath -Force -ErrorAction SilentlyContinue",
+        "}"
+    ],
+    "bin": "thunderbird.exe",
+    "shortcuts": [
+        [
+            "thunderbird.exe",
+            "Thunderbird"
+        ],
+        [
+            "thunderbird.exe",
+            "Thunderbird Profile Manager",
+            "-P"
+        ]
+    ],
+    "persist": [
+        "distribution",
+        "profile"
+    ],
+    "checkver": {
+        "url": "https://www.thunderbird.net/thunderbird/all/",
+        "regex": "thunderbird/([\\d.]+)/"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://archive.mozilla.org/pub/thunderbird/releases/$version/win64/en-US/Thunderbird%20Setup%20$version.exe#/dl.7z",
+                "hash": {
+                    "url": "https://archive.mozilla.org/pub/thunderbird/releases/$version/SHA512SUMS",
+                    "regex": "$sha512\\s+win64/en-US/$basename"
+                }
+            },
+            "32bit": {
+                "url": "https://archive.mozilla.org/pub/thunderbird/releases/$version/win32/en-US/Thunderbird%20Setup%20$version.exe#/dl.7z",
+                "hash": {
+                    "url": "https://archive.mozilla.org/pub/thunderbird/releases/$version/SHA512SUMS",
+                    "regex": "$sha512\\s+win32/en-US/$basename"
+                }
+            }
+        }
+    }
+}
