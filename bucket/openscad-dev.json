@@ -1,0 +1,25 @@
+{
+    "version": "2023.10.11",
+    "description": "The Programmers Solid 3D CAD Modeller (Development Snapshot)",
+    "homepage": "https://www.openscad.org/",
+    "license": "GPL-2.0-or-later",
+    "url": "https://files.openscad.org/snapshots/OpenSCAD-2023.10.11-x86-64.zip",
+    "hash": "f9b1d7b3fb4809c3ae9c10290c9a52a2c40a322411d0b2a16d29b5ac67d47fa9",
+    "extract_dir": "openscad-2023.10.11-x86-64",
+    "post_install": [
+        "# OpenSCAD can't be started from a symlinked directory. See: https://github.com/openscad/openscad/issues/1309",
+        "startmenu_shortcut \"$original_dir/openscad.exe\" 'OpenSCAD'",
+        "shim \"$original_dir\\openscad.exe\" $false 'openscad'"
+    ],
+    "checkver": {
+        "url": "https://files.openscad.org/snapshots/.snapshot_win64.js",
+        "regex": "'WIN64_SNAPSHOT_ZIP', 'OpenSCAD-([\\d\\.-]+)'"
+    },
+    "autoupdate": {
+        "url": "https://files.openscad.org/snapshots/OpenSCAD-$version-x86-64.zip",
+        "hash": {
+            "url": "$url.sha256"
+        },
+        "extract_dir": "openscad-$version-x86-64"
+    }
+}
