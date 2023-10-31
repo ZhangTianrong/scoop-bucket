@@ -5,13 +5,21 @@
     "version": "0.1.5",
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/hoothin/RustClock/releases/download/$version/RustClock_$version_win64.zip",
-        "hash": {
-            "mode": "download"
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/hoothin/RustClock/releases/download/$version/RustClock_$version_win64.zip",
+                "hash": {
+                    "mode": "download"
+                }
+            }
         }
     },
-    "url": "https://github.com/hoothin/RustClock/releases/download/0.1.5/RustClock_0.1.5_win64.zip",
-    "hash": "a642f0ce223f629fa5f3dc08de2a67d824c91e579a8d17e3e10be0a6e90dccaa",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/hoothin/RustClock/releases/download/0.1.5/RustClock_0.1.5_win64.zip",
+            "hash": "a642f0ce223f629fa5f3dc08de2a67d824c91e579a8d17e3e10be0a6e90dccaa"
+        }
+    },
     "shortcuts": [
         [
             "rust_clock.exe",
