@@ -19,13 +19,9 @@
         ]
     ],
     "pre_install": [
-        "New-Item -Path (Join-Path -Path $dir -ChildPath Umi-OCR_config.json) -ItemType File -Force | Out-Null",
+        "New-Item -Path (Join-Path -Path $dir -ChildPath Umi-OCR_config.json) -ItemType File -ErrorAction SilentlyContinue | Out-Null",
         "Set-Content -Path (Join-Path -Path $dir -ChildPath Umi-OCR_config.json) -Value '{}' | Out-Null"
     ],
     "persist": "Umi-OCR_config.json",
-    "checkver": "github",
-    "autoupdate": {
-        "url": "https://github.com/hiroi-sora/Umi-OCR/releases/download/v$version/Umi-OCR.v$version.7z"
-    },
     "Notes": "Visit project homepage for more language packs."
 }
