@@ -12,7 +12,7 @@
             ],
             "hash": [
                 "1acfeaac8352313a607d2aa55a8a56e3662054ccf0bb05fc1eb909e1159152db",
-                "e11946257292c009e243cc0c9d843316e5aec02ff83ad6d93fb35ac24205b3b4"
+                "776f368f800012542f76dfaa70ce8fd97d866cbffacddaa677cde13849647551"
             ]
         },
         "32bit": {
@@ -22,17 +22,23 @@
             ],
             "hash": [
                 "f2ecd1c350829856e84b6aaf608a4be0a616784cac48b8cb1315a6970d1f45af",
-                "e11946257292c009e243cc0c9d843316e5aec02ff83ad6d93fb35ac24205b3b4"
+                "776f368f800012542f76dfaa70ce8fd97d866cbffacddaa677cde13849647551"
             ]
         }
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://www.nirsoft.net/utils/usbdeview-x64.zip"
+                "url": [
+                    "https://www.nirsoft.net/utils/usbdeview-x64.zip",
+                    "http://www.linux-usb.org/usb.ids"
+                ]
             },
             "32bit": {
-                "url": "https://www.nirsoft.net/utils/usbdeview.zip"
+                "url": [
+                    "https://www.nirsoft.net/utils/usbdeview.zip",
+                    "http://www.linux-usb.org/usb.ids"
+                ]
             }
         },
         "hash": {
