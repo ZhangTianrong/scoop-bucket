@@ -14,7 +14,12 @@
     "installer": {
         "script": [
             "Push-Location $dir",
-            "v -prod .",
+            "$vsRegPath = \"HKLM:\\SOFTWARE\\WOW6432Node\\Microsoft\\VisualStudio\\\"",
+            "if ((Get-ChildItem $vsRegPath).Count -gt 0) {",
+            "   v -cc msvc -prod .",
+            "} else {",
+            "   v -prod .",
+            "}",
             "$exe = $version + '.exe'",
             "Move-Item $exe vqrcode.exe -Force -ErrorAction SilentlyContinue",
             "Pop-Location"
