@@ -69,7 +69,7 @@
             "   error 'Failed to save share link to Aliyun Drive'",
             "   break",
             "}",
-            "$filename = ($isFileSaved | Select-Object -First 1).Split(\"-\")[-1].Trim()",
+            "$filename = (($isFileSaved | Select-Object -First 1) -split (\"(?=Duplicate)\"))[-1].Trim()",
             "$retryCount = 0",
             "while ($true) {",
             "   AliPCS-Py d -o \"$dir\" \"/Scoop/Duplicate Cleaner/$filename\"",
