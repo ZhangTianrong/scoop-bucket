@@ -37,7 +37,7 @@
             "   Write-Host \"To find the refersh token, run 'JSON.parse(localStorage.token).refresh_token' after logging in to Aliyun Drive.\"",
             "   AliPCS-Py useradd",
             "   $userList = AliPCS-Py ul",
-            "   $isLoggedIn = ((aliyunpan.exe loglist | Measure-Object -Line).Lines -gt 1)",
+            "   $isLoggedIn = ($userList.Length -gt 2 + $userList.IndexOf($($userList | Where-Object { $_ -match 'Index'})))",
             "   if ($isLoggedIn) { break }",
             "   $retryCount++",
             "   if ($retryCount -ge $manifest.max_retry) { break }",
