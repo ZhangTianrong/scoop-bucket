@@ -1,5 +1,5 @@
 {
-    "version": "179",
+    "version": "180",
     "description": "A highly customizable fan controlling software for Windows",
     "homepage": "https://getfancontrol.com/",
     "license": "Freeware",
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Rem0o/FanControl.Releases/releases/download/V179/FanControl_net_7_0.zip",
-            "hash": "e2a4bb10d82b85f347303395a5b6954d52e06c99f7d3b88cdc016ebf5099fe6d"
+            "url": "https://github.com/Rem0o/FanControl.Releases/releases/download/V180/FanControl_net_7_0.zip",
+            "hash": "b16718b3d0b130cc8bb16187c6fb1fa4c7e80322dc7cf41d17debe43513bef45"
         }
     },
     "shortcuts": [
