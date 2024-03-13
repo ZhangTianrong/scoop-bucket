@@ -1,0 +1,28 @@
+{
+    "version": "1.6.1",
+    "description": "Virtual Desktop Body Tracking Configurator",
+    "homepage": "https://github.com/DenTechs/Virtual_Desktop_Body_Tracking_Configurator",
+    "license": "MIT",
+    "url": "https://github.com/DenTechs/Virtual_Desktop_Body_Tracking_Configurator/releases/download/1.6.1/Virtual_Desktop_Body_Tracking_Configurator_v1_6_1.zip",
+    "hash": "fd9c2c60c14916ecf2296b2d9c552ec6c97eb98046728634998d6e95a727c8e0",
+    "checkver": {
+        "url": "https://api.github.com/repositories/764972782/releases/latest",
+        "jsonpath": "$..browser_download_url",
+        "regex": "releases/download/(?<version>[\\d\\w\\.]+)/Virtual_Desktop_Body_Tracking_Configurator_v(?<str>[\\d_]+).*\\.zip"
+    },
+    "autoupdate": {
+        "url": "https://github.com/DenTechs/Virtual_Desktop_Body_Tracking_Configurator/releases/download/$matchVersion/Virtual_Desktop_Body_Tracking_Configurator_v$matchStr.zip",
+        "shortcuts": [
+            [
+                "Virtual_Desktop_Body_Tracking_Configurator_v$matchStr.exe",
+                "Virtual Desktop Body Tracking Configurator"
+            ]
+        ]
+    },
+    "shortcuts": [
+        [
+            "Virtual_Desktop_Body_Tracking_Configurator_v1_6_1.exe",
+            "Virtual Desktop Body Tracking Configurator"
+        ]
+    ]
+}
