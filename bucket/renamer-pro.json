@@ -2,10 +2,13 @@
     "description": "ReNamer Pro cracked version by Dayanzai.me",
     "homepage": "http://www.dayanzai.me/renamer-pro.html",
     "license": "Unknown",
-    "version": "7.5",
-    "depends": [ "baidupcs-go", "7zip" ],
-    "url": "https://www.den4b.com/download/renamer/portable/7.5?token=scoop#/unmodified.zip_",
-    "hash": "b11342a59f22d9c48482a7f08e060109da21bb25cfc8acdd42d2b40ea6489168",
+    "version": "7.5.0.2",
+    "depends": [
+        "baidupcs-go",
+        "7zip"
+    ],
+    "url": "https://www.den4b.com/download/renamer/portable/7.5.0.2?token=scoop#/unmodified.zip_",
+    "hash": "d3df7dc5574956f9010621d117193e35527b78018ce450520c809fe2365013c8",
     "installer": {
         "script": [
             "Write-Host \"The native scoop hashcheck is only performed for the unmodified version. Use the cracked version at your own risk.\"",
@@ -28,7 +31,8 @@
             "BaiduPCS-Go transfer $downloadURL $passcode",
             "BaiduPCS-Go download $filename --saveto $dir",
             "BaiduPCS-Go cd / | Out-Null",
-            "Push-Location $dir && (7z e $filename renamer-$version.zip | Out-Null) && Remove-Item $filename && Expand-Archive renamer-$version.zip -DestinationPath . -Force && Remove-Item renamer-$version.zip &&  Pop-Location"
+            "$innerzipfile = (([regex]\"renamer-[^\\.]*\\.zip\").Matches($(7z l $(Join-Path -Path $dir -ChildPath $filename))) | Select-Object -First 1).Value",
+            "Push-Location $dir && (7z e $filename $innerzipfile | Out-Null) && Remove-Item $filename && Expand-Archive $innerzipfile -DestinationPath . -Force && Remove-Item $innerzipfile && Pop-Location"
         ]
     },
     "checkver": {
