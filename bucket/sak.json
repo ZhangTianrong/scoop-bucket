@@ -16,10 +16,5 @@
         }
     },
     "extract_dir": "v",
-    "shortcuts": [
-        [
-            "SAK.exe",
-            "SAK"
-        ]
-    ]
+    "shortcuts": [["SAK.exe", "SAK"]]
 }

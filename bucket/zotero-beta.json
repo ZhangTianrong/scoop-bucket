@@ -15,12 +15,7 @@
     },
     "extract_dir": "core",
     "bin": "zotero.exe",
-    "shortcuts": [
-        [
-            "zotero.exe",
-            "Zotero"
-        ]
-    ],
+    "shortcuts": [["zotero.exe", "Zotero"]],
     "notes": [
         "To register the 'zotero://' URL protocol, run:",
         "$dir\\install-zotero-url-protocol.ps1",

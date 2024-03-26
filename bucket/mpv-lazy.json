@@ -17,12 +17,7 @@
                 "7faa3407efb69f1e27e3c4dd08948c230624fc657b53cf2d44e9eca941253b5e",
                 "6166e611cb1d3d4c52a78930a154beabb6f209365f9d30df2f7ddd38c5f129d5"
             ],
-            "extract_dir": [
-                "mpv-lazy",
-                "mpv-lazy",
-                "mpv-lazy",
-                "mpv-lazy"
-            ]
+            "extract_dir": ["mpv-lazy", "mpv-lazy", "mpv-lazy", "mpv-lazy"]
         }
     },
     "persist": [
@@ -32,12 +27,7 @@
         "portable_config/input_uosc.conf"
     ],
     "bin": "mpv.exe",
-    "shortcuts": [
-        [
-            "mpv.exe",
-            "MPV"
-        ]
-    ],
+    "shortcuts": [["mpv.exe", "MPV"]],
     "checkver": "github",
     "autoupdate": {
         "architecture": {

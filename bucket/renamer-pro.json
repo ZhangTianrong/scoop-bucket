@@ -3,10 +3,7 @@
     "homepage": "http://www.dayanzai.me/renamer-pro.html",
     "license": "Unknown",
     "version": "7.5.0.2",
-    "depends": [
-        "baidupcs-go",
-        "7zip"
-    ],
+    "depends": ["baidupcs-go", "7zip"],
     "url": "https://www.den4b.com/download/renamer/portable/7.5.0.2?token=scoop#/unmodified.zip_",
     "hash": "d3df7dc5574956f9010621d117193e35527b78018ce450520c809fe2365013c8",
     "installer": {
@@ -45,15 +42,7 @@
             "mode": "download"
         }
     },
-    "shortcuts": [
-        [
-            "ReNamer.exe",
-            "ReNamer"
-        ]
-    ],
-    "persist": [
-        "Settings.ini",
-        "Presets"
-    ],
+    "shortcuts": [["ReNamer.exe", "ReNamer"]],
+    "persist": ["Settings.ini", "Presets"],
     "bin": "ReNamer.exe"
 }

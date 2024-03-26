@@ -2,20 +2,12 @@
     "version": "2.93",
     "homepage": "https://www.nirsoft.net/utils/wifi_information_view.html",
     "bin": "WifiInfoView.exe",
-    "shortcuts": [
-        [
-            "WifiInfoView.exe",
-            "NirSoft\\WifiInfoView"
-        ]
-    ],
+    "shortcuts": [["WifiInfoView.exe", "NirSoft\\WifiInfoView"]],
     "pre_install": [
         "New-Item -Path $dir\\wifiinfoview.cfg | Out-Null",
         "New-Item -Path $dir\\wifiinfoview_lng.ini | Out-Null"
     ],
-    "persist": [
-        "wifiinfoview_lng.ini",
-        "wifiinfoview.cfg"
-    ],
+    "persist": ["wifiinfoview_lng.ini", "wifiinfoview.cfg"],
     "architecture": {
         "64bit": {
             "url": "https://www.nirsoft.net/utils/wifiinfoview-x64.zip",

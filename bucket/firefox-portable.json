@@ -16,12 +16,7 @@
     },
     "extract_dir": "core",
     "bin": "firefox.exe",
-    "shortcuts": [
-        [
-            "firefox.exe",
-            "Firefox"
-        ]
-    ],
+    "shortcuts": [["firefox.exe", "Firefox"]],
     "post_install": [
         "if (Test-Path \"$persist_dir\\.use_persist_profile\") {",
         "   $shortcutPath = Join-Path -Path (Convert-Path([System.IO.Path]::Combine([Environment]::GetFolderPath($global ? 'CommonStartMenu':'StartMenu'), 'Programs', 'Scoop Apps'))) -ChildPath 'Firefox.lnk'",

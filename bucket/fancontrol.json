@@ -12,16 +12,8 @@
             "hash": "5e6ed35cee509e3cd2e2a0a3ef9feb5a82cb3f277dbc883f605bd9c30e1941d6"
         }
     },
-    "shortcuts": [
-        [
-            "FanControl.exe",
-            "FanControl"
-        ]
-    ],
-    "persist": [
-        "Configurations",
-        "Plugins"
-    ],
+    "shortcuts": [["FanControl.exe", "FanControl"]],
+    "persist": ["Configurations", "Plugins"],
     "checkver": {
         "url": "https://api.github.com/repositories/268350681/releases/latest",
         "jsonpath": "$.assets..browser_download_url",

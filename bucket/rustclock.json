@@ -20,12 +20,7 @@
             "hash": "a642f0ce223f629fa5f3dc08de2a67d824c91e579a8d17e3e10be0a6e90dccaa"
         }
     },
-    "shortcuts": [
-        [
-            "rust_clock.exe",
-            "RustClock"
-        ]
-    ],
+    "shortcuts": [["rust_clock.exe", "RustClock"]],
     "pre_install": "New-Item -Path \"$dir\\conf.ini\" | Out-Null",
     "persist": "conf.ini"
 }

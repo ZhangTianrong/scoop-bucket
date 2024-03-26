@@ -16,16 +16,8 @@
         }
     },
     "bin": "aliyunpan.exe",
-    "shortcuts": [
-        [
-            "aliyunpan.exe",
-            "aliyunpan"
-        ]
-    ],
-    "persist": [
-        "config",
-        "Downloads"
-    ],
+    "shortcuts": [["aliyunpan.exe", "aliyunpan"]],
+    "persist": ["config", "Downloads"],
     "env_set": {
         "ALIYUNPAN_CONFIG_DIR": "$dir\\config"
     },
