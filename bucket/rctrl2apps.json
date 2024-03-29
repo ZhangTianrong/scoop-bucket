@@ -2,6 +2,7 @@
     "version": "1.0",
     "description": "AutoHotKey script to map right Ctrl as AppsKey",
     "homepage": "https://github.com/ZhangTianrong/scoop-bucket",
+    "url": "https://github.com/ZhangTianrong/scoop-bucket/raw/master/bucket/rctrl2apps.json",
     "license": "Unknown",
     "depends": ["autohotkey", "imagemagick"],
     "installer": {
@@ -32,8 +33,16 @@
             "$ahkV1Root = (Get-ChildItem -Directory $ahkRoot | Where-Object { $_.Name -match '^v1' } | Select-Object -First 1).FullName",
             "$ahkV1ANSIBase = (Join-Path -Path $ahkV1Root -ChildPath \"ANSI 32-bit.bin\")",
             "$ahk2exe = (Join-Path -Path $(scoop prefix autohotkey) -ChildPath \"Compiler\\Ahk2Exe.exe\")",
-            "$exePath = (Resolve-Path -Path $(Join-Path -Path \"$dir\" -ChildPath \"RCtrl2Apps.exe\"))",
-            "& $ahk2exe /in \"$scriptPath\" /out \"$exePath\" /icon \"$iconPath\" /bin \"$ahkV1ANSIBase\""
+            "$exePath = (Join-Path -Path $(Resolve-Path -Path \"$dir\") -ChildPath \"RCtrl2Apps.exe\")",
+            "& $ahk2exe /in \"$scriptPath\" /icon \"$iconPath\" /bin \"$ahkV1ANSIBase\" /out \"$exePath\"",
+            "$timeout = 5",
+            "$stopwatch = [System.Diagnostics.Stopwatch]::StartNew()",
+            "while (-not (Test-Path $exePath) -and $stopwatch.Elapsed.TotalSeconds -lt $timeout) {",
+            "   Start-Sleep -Milliseconds 100",
+            "}",
+            "if (-not (Test-Path $exePath)) {",
+            "   error \"AutoHotKey failed to compile RCtrl2Apps.ahk\"",
+            "}"
         ]
     },
     "shortcuts": [
