@@ -3,6 +3,7 @@
     "description": "Command line tool and library for transferring data with URLs",
     "homepage": "https://curl.se/",
     "license": "MIT",
+    "depends": ["findlinks"],
     "architecture": {
         "64bit": {
             "url": "https://curl.se/windows/dl-8.7.1_1/curl-8.7.1_1-win64-mingw.tar.xz",
@@ -78,7 +79,7 @@
         "               $choice = $Host.UI.PromptForChoice(\"Detected change in curl-ca-bundle.crt\", $null, $options, 0)",
         "           }",
         "           switch ($choice) {",
-        "               0 { Move-Item \"$dir\\bin\\curl-ca-bundle.crt\" \"$dir\\bin\\curl-ca-bundle.default.crt\"; Copy-Item \"$persist_dir\\curl-ca-bundle.crt\" \"$dir\\bin\\curl-ca-bundle.crt\" ; $resolved = $true; break }",
+        "               0 { Move-Item \"$dir\\bin\\curl-ca-bundle.crt\" \"$dir\\bin\\curl-ca-bundle.default.crt\"; New-Item -Type HardLink -Path \"$dir\\bin\\curl-ca-bundle.crt\" -Value \"$persist_dir\\curl-ca-bundle.crt\" | Out-Null ; $resolved = $true; break }",
         "               1 { $resolved = $true; break }",
         "               2 { Write-Output \"<=: persisted certificates`n=>: new certificates\"; $diff | Out-String | Write-Output ; break }",
         "           }",
@@ -88,9 +89,21 @@
     ],
     "pre_uninstall": [
         "# Persist manually curl-ca-bundle.crt",
-        "if (Test-Path \"$dir\\bin\\curl-ca-bundle.crt\") {",
-        "    ensure \"$persist_dir\" | Out-Null",
-        "    Copy-Item \"$dir\\bin\\curl-ca-bundle.crt\" \"$persist_dir\\curl-ca-bundle.crt\" -Force -Recurse",
+        "$localCrt = \"$dir\\bin\\curl-ca-bundle.crt\"",
+        "$persistCrt = \"$persist_dir\\curl-ca-bundle.crt\"",
+        "if (Test-Path \"$localCrt\") {",
+        "   # If there wasn't a persisted certificate, persist the current one",
+        "   if (-not (Test-Path \"$persistCrt\")) { Copy-Item -Path \"$localCrt\" -Destination \"$persistCrt\"; return; }",
+        "   # If the current certificate is hard linked to the persisted certificate, do nothing",
+        "   $rst = $(findlinks -accepteula -nobanner \"$localCrt\")",
+        "   $idx = $rst | Select-String -Pattern \"Linking files:\" | Select-Object -First 1 -ExpandProperty LineNumber",
+        "   if ($idx) {$hardLinks = $rst[$idx..$rst.Length]} else { $hardLinks = @() }",
+        "   if (($hardLinks | ForEach-Object {(Get-Item -Path $_).FullName}) -contains (Get-Item -Path \"$persistCrt\").FullName) { return } else {",
+        "       # If the current certificate is not hard linked to the persisted certificate, move the current certificate to a temporary location",
+        "       $tmpCrt = \"$Env:Temp\\curl-ca-bundle.$((Get-Random).ToString()).crt\"",
+        "       Move-Item -Path \"$localCrt\" -Destination \"$tmpCrt\"",
+        "       Write-Host \"The current curl-ca-bundle.crt was moved to $tmpCrt\", you can recover it manually if needed.",
+        "   }",
         "}"
     ],
     "notes": [
