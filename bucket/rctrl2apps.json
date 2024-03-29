@@ -2,7 +2,8 @@
     "version": "1.0",
     "description": "AutoHotKey script to map right Ctrl as AppsKey",
     "homepage": "https://github.com/ZhangTianrong/scoop-bucket",
-    "url": "https://github.com/ZhangTianrong/scoop-bucket/raw/master/bucket/rctrl2apps.json",
+    "url": "https://github.com/ZhangTianrong/scoop-bucket/raw/8f1fa55696798994d726f40e8e428e518ade1a07/bucket/rctrl2apps.json",
+    "hash": "812D37E3F85B22B780E2517B95098CD88D63AC6BBCCD98295047EAD844F093EF",
     "license": "Unknown",
     "depends": ["autohotkey", "imagemagick"],
     "installer": {
