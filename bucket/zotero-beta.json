@@ -1,21 +1,26 @@
 {
-    "version": "7.0.0-beta.68",
+    "version": "7.0.0-beta.72",
     "description": "Open-source reference management software to manage bibliographic data and related research materials.",
     "homepage": "https://www.zotero.org/",
     "license": "AGPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://download.zotero.org/client/beta/7.0.0-beta.68%2Bc31a40c74/Zotero-7.0.0-beta.68%2Bc31a40c74_x64_setup.exe#/dl.7z",
-            "hash": "700d8ad7362ee35d8969e959d76bcf82938ac5dd4bcbca0b75c5446df0895a1a"
+            "url": "https://download.zotero.org/client/beta/7.0.0-beta.72%2B128a540af/Zotero-7.0.0-beta.72%2B128a540af_x64_setup.exe#/dl.7z",
+            "hash": "1eef4855d7e3a7463209d17a0e1a886c2170e7090b620a690ab4f93a05399453"
         },
         "32bit": {
-            "url": "https://download.zotero.org/client/beta/7.0.0-beta.68%2Bc31a40c74/Zotero-7.0.0-beta.68%2Bc31a40c74_win32_setup.exe#/dl.7z",
-            "hash": "a54fe7096201029c20a64e3a84e08eaae720fe47d570aeaa780442143b62c813"
+            "url": "https://download.zotero.org/client/beta/7.0.0-beta.72%2B128a540af/Zotero-7.0.0-beta.72%2B128a540af_win32_setup.exe#/dl.7z",
+            "hash": "810046d0c4031d416c0cf6e20a9926e44cb1540c97b867f68b29b8530361ef0c"
         }
     },
     "extract_dir": "core",
     "bin": "zotero.exe",
-    "shortcuts": [["zotero.exe", "Zotero"]],
+    "shortcuts": [
+        [
+            "zotero.exe",
+            "Zotero"
+        ]
+    ],
     "notes": [
         "To register the 'zotero://' URL protocol, run:",
         "$dir\\install-zotero-url-protocol.ps1",
@@ -27,7 +32,7 @@
     ],
     "post_install": [
         "if (!(Test-Path -Path $dir\\install-zotero-url-protocol.ps1)) {",
-        "    New-Item -Path $dir\\install-zotero-url-protocol.ps1 -ItemType File -Force",
+        "    New-Item -Path $dir\\install-zotero-url-protocol.ps1 -ItemType File -Force | Out-Null",
         "}",
         "Set-Content -Path $dir\\install-zotero-url-protocol.ps1 -Force -Value @'",
         "Write-Host 'Registering the ''zotero://'' URL protocol...'",
@@ -39,9 +44,8 @@
         "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\zotero' -Name 'EditFlags' -PropertyType 'DWord' -Value '2' -Force | Out-Null",
         "Write-Host 'Done!'",
         "'@",
-        "Get-Content -Path $dir\\install-zotero-url-protocol.ps1",
         "if (!(Test-Path -Path $dir\\uninstall-zotero-url-protocol.ps1)) {",
-        "    New-Item -Path $dir\\uninstall-zotero-url-protocol.ps1 -ItemType File -Force",
+        "    New-Item -Path $dir\\uninstall-zotero-url-protocol.ps1 -ItemType File -Force | Out-Null",
         "}",
         "Set-Content -Path $dir\\uninstall-zotero-url-protocol.ps1 -Force -Value @'",
         "Write-Host 'Unregistering the ''zotero://'' URL protocol...'",
