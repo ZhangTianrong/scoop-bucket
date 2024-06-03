@@ -1,5 +1,5 @@
 {
-    "version": "0.4.6",
+    "version": "weekly.2024.22",
     "description": "The V Programming Language. Simple, fast, safe, compiled.",
     "homepage": "https://github.com/vlang/v",
     "license": "MIT",
@@ -7,8 +7,8 @@
         "Vlang contains TCC with the prebuilt binary. For making optimized builds of your software you have to install GNU/GCC or LLVM/Clang",
         "See https://github.com/vlang/v/wiki/Installing-a-C-compiler-on-Windows for more information."
     ],
-    "url": "https://github.com/vlang/v/releases/download/0.4.6/v_windows.zip",
-    "hash": "ea76cd973ab2fd07d03b72cf7b9d7f6896ba3a1ac21e1c01d9e372254a1dfaa8",
+    "url": "https://github.com/vlang/v/releases/download/weekly.2024.22/v_windows.zip",
+    "hash": "919cd07ee698efa09a012fb3d6b957b0cf8c1a8aa0ae3837392377556abcac4e",
     "extract_dir": "v",
     "bin": "v.exe",
     "checkver": {
