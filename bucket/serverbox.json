@@ -2,7 +2,7 @@
     "description": "run-hidden runs Windows console apps like PowerShell with hidden console window.",
     "homepage": "https://github.com/lollipopkit/flutter_server_box",
     "license": "GPL-3.0",
-    "version": "1.0.493",
+    "version": "1.0.930",
     "checkver": "github",
     "autoupdate": {
         "url": "https://cdn.lolli.tech/serverbox/latest.win.zip",
