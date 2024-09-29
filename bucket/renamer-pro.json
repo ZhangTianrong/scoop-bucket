@@ -1,15 +1,18 @@
 {
     "description": "ReNamer Pro cracked version by Dayanzai.me",
-    "homepage": "http://www.dayanzai.me/renamer-pro.html",
+    "homepage": "https://www.dayanzai.me/renamer-pro.html",
     "license": "Unknown",
-    "version": "7.5.0.2",
-    "depends": ["baidupcs-go", "7zip"],
-    "url": "https://www.den4b.com/download/renamer/portable/7.5.0.2?token=scoop#/unmodified.zip_",
-    "hash": "d3df7dc5574956f9010621d117193e35527b78018ce450520c809fe2365013c8",
+    "version": "7.6",
+    "depends": [
+        "baidupcs-go",
+        "7zip"
+    ],
+    "url": "https://www.den4b.com/download/renamer/portable/7.6?token=scoop#/unmodified.zip_",
+    "hash": "9a9b0b55be85df810741c8ccf619b69211716aadb9d7af96e9abd50f07c1a9bc",
     "installer": {
         "script": [
             "Write-Host \"The native scoop hashcheck is only performed for the unmodified version. Use the cracked version at your own risk.\"",
-            "$webResponse = Invoke-WebRequest \"http://www.dayanzai.me/renamer-pro.html\"",
+            "$webResponse = Invoke-WebRequest \"https://www.dayanzai.me/renamer-pro.html\"",
             "$downloadURL = ($webResponse.Links | Where-Object {($_.outerHTML -like \"*>点击下载<*\") -and ($_.href -like \"*pan.baidu.com*\")} | Select-Object -first 1).href",
             "$passcode = $downloadURL.Split(\"?pwd=\")[-1]",
             "$downloadURL = $downloadURL.Split(\"?pwd=\")[0]",
@@ -33,7 +36,7 @@
         ]
     },
     "checkver": {
-        "url": "http://www.dayanzai.me/renamer-pro.html",
+        "url": "https://www.dayanzai.me/renamer-pro.html",
         "regex": "<title>.* ([\\d\\.]+) .*</title>"
     },
     "autoupdate": {
@@ -42,7 +45,15 @@
             "mode": "download"
         }
     },
-    "shortcuts": [["ReNamer.exe", "ReNamer"]],
-    "persist": ["Settings.ini", "Presets"],
+    "shortcuts": [
+        [
+            "ReNamer.exe",
+            "ReNamer"
+        ]
+    ],
+    "persist": [
+        "Settings.ini",
+        "Presets"
+    ],
     "bin": "ReNamer.exe"
 }
