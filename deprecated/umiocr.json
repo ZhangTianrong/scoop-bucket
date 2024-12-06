@@ -1,0 +1,17 @@
+{
+    "homepage": "https://github.com/hiroi-sora/Umi-OCR",
+    "description": "Offline OCR tool based on PadddleOCR",
+    "license": "MIT",
+    "version": "1.3.7",
+    "url": "https://github.com/hiroi-sora/Umi-OCR/releases/download/v1.3.7/Umi-OCR.v1.3.7.7z",
+    "hash": "8aff9198a5c1328c986fd13d9c17491727e994908f722cdea661dfcc01970587",
+    "extract_dir": "Umi-OCR",
+    "bin": [["extra\\umiocr.exe", "umiocr"]],
+    "shortcuts": [["Umi-OCR 文字识别.exe", "UmiOCR"]],
+    "pre_install": [
+        "New-Item -Path (Join-Path -Path $dir -ChildPath Umi-OCR_config.json) -ItemType File -ErrorAction SilentlyContinue | Out-Null",
+        "Set-Content -Path (Join-Path -Path $dir -ChildPath Umi-OCR_config.json) -Value '{}' | Out-Null"
+    ],
+    "persist": "Umi-OCR_config.json",
+    "Notes": "Visit project homepage for more language packs."
+}

@@ -1,0 +1,39 @@
+{
+    "homepage": "https://github.com/hiroi-sora/Umi-OCR",
+    "description": "Offline OCR tool based on PadddleOCR",
+    "license": "MIT",
+    "version": "2.1.4",
+    "url": "https://github.com/hiroi-sora/Umi-OCR/releases/download/v2.1.4/Umi-OCR_Linux_Paddle_2.1.4.tar.xz#/download.7z",
+    "hash": "0dae3a93eb4fc8da23097944f403d143430ec27a91ce3fa563ac5d363b69246e",
+    "extract_dir": "Umi-OCR_Linux_Paddle_2.1.4.tar.xz",
+    "shortcuts": [
+        [
+            "Umi-OCR.exe",
+            "UmiOCR"
+        ]
+    ],
+    "bin": [
+        [
+            "Umi-OCR.exe",
+            "umiocr"
+        ]
+    ],
+    "pre_install": "New-Item -Path (Join-Path -Path $dir -ChildPath 'UmiOCR-data/.settings') -ItemType File -ErrorAction SilentlyContinue | Out-Null",
+    "persist": "UmiOCR-data/.settings",
+    "checkver": {
+        "script": [
+            "$ReleaseJson = Invoke-RestMethod -Uri 'https://api.github.com/repos/hiroi-sora/Umi-OCR/releases/latest'",
+            "$AssetsJson = Invoke-RestMethod -Uri $ReleaseJson.assets_url",
+            "$AssetsJson = $AssetsJson | Sort-Object -Property size -Descending | Select-Object -First 1",
+            "$DownloadURL = $AssetsJson.browser_download_url",
+            "$Dirname = $AssetsJson.name.Replace('.7z','').Replace('.exe','')",
+            "\"$($ReleaseJson.tag_name)以及$($DownloadURL)以及$($Dirname)\""
+        ],
+        "regex": "^(?<Prefix>.*/|v)(?<Version>\\d+(\\.\\d+)*)以及(?<URL>.*)以及(?<Dirname>.*)$",
+        "replace": "${Version}"
+    },
+    "autoupdate": {
+        "url": "$matchURL#/download.7z",
+        "extract_dir": "$matchDirname"
+    }
+}
