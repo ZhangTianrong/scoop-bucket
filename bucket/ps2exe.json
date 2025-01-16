@@ -1,10 +1,10 @@
 {
-    "version": "1.0.14",
+    "version": "1.0.15",
     "description": "PowerShell module that compiles Powershell scripts to executables",
     "homepage": "https://github.com/MScholtes/PS2EXE",
     "license": "MS-LPL",
-    "url": "https://psg-prod-eastus.azureedge.net/packages/ps2exe.1.0.14.nupkg",
-    "hash": "ca7bb9ab55b31152cffffdfdd766d07f02465b0cc854406af64fc1eecdb07130",
+    "url": "https://psg-prod-eastus.azureedge.net/packages/ps2exe.1.0.15.nupkg",
+    "hash": "028d1aed35a46d42c9e08950b12ed79330884a5146cdc29e5a65e695aeb1e5f2",
     "psmodule": {
         "name": "ps2exe"
     },
