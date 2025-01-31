@@ -1,10 +1,10 @@
 {
-    "version": "20250127-1628",
+    "version": "20250131-1627",
     "description": "BeatLeader's ranked playlists by stars.",
     "homepage": "https://github.com/ranmd9a/beatleader-ranked",
     "license": "Unknown",
     "url": "https://github.com/ranmd9a/beatleader-ranked/releases/download/latest/beatleader_ranked_all.zip",
-    "hash": "6512896ebf4368dd12186f1baaf380b883e572ea54cc2ba986d76b6d56d3147c",
+    "hash": "89ed16723b70b8cebe20a9f00c1a6173e47f7e677deca5ec87e75dfcbbeb34e3",
     "checkver": {
         "url": "https://api.github.com/repos/ranmd9a/beatleader-ranked/releases/latest",
         "jsonpath": "$.name",
