@@ -57,7 +57,7 @@ $output += "`$script = [string]::Join('', `$script_chunks)"
 
 # Output the result
 if ($json) {
-    $output -split "`n" | ConvertTo-Json
+    $output -split "`r`n|`r|`n" | ConvertTo-Json
 }
 else {
     $output
