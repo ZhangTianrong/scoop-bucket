@@ -1,6 +1,6 @@
 on:
   schedule:
-  - cron: '*/30 * * * *'
+  - cron: '20 5,11,17,23 * * *'
   workflow_dispatch:
 
 name: Excavator
