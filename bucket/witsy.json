@@ -6,7 +6,7 @@
     "checkver": "github",
     "autoupdate": {
         "architecture": {
-            "x64": {
+            "64bit": {
                 "url": "https://github.com/nbonamy/witsy/releases/download/v$version/Witsy-$version-win32-x64.zip",
                 "hash": {
                     "mode": "download"
@@ -21,7 +21,7 @@
         }
     },
     "architecture": {
-        "x64": {
+        "64bit": {
             "url": "https://github.com/nbonamy/witsy/releases/download/v2.3.0/Witsy-2.3.0-win32-x64.zip",
             "hash": "0fa51967ee40cfedd193ac771478ff95970d6c193e67ae2c64aeb8eb250cde2c"
         },
