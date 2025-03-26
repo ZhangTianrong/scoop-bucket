@@ -4,10 +4,10 @@
     "homepage": "https://app.follow.is/",
     "license": {
         "identifier": "GPL-3.0 license",
-        "url": "https://github.com/RSSNext/Follow#GPL-3.0-1-ov-file"
+        "url": "https://github.com/RSSNext/Folo#GPL-3.0-1-ov-file"
     },
-    "url": "https://github.com/RSSNext/Follow/releases/download/v0.3.13/Follow-0.3.13-windows-x64.exe#/dl.7z",
-    "hash": "sha512:aaf2a80c4715447d6cb8f7b47d1b5148b87fb604e5a73d673e273c4a2c1614177711fc5818f457f308a1e997a8d9b60837f53b50f5d2eccf05f3cac0dd4cb04b",
+    "url": "https://github.com/RSSNext/Folo/releases/download/v0.3.13/Folo-0.3.13-windows-x64.exe#/dl.7z",
+    "hash": "bd8ef3a3702c5fd127ca3e85ed81bd37ebb3a51932ae0a566a83f2015a5d4f9e",
     "pre_install": [
         "Get-Item \"$dir\\Follow*.nupkg\" | Rename-Item -NewName 'Follow.nupkg'",
         "Expand-7zipArchive \"$dir\\Follow.nupkg\" \"$dir\" -ExtractDir 'lib\\net45'",
@@ -21,14 +21,11 @@
         ]
     ],
     "checkver": {
-        "url": "https://api.github.com/repos/RSSNext/Follow/releases/latest",
+        "url": "https://api.github.com/repos/RSSNext/Folo/releases/latest",
         "regex": "/releases/tag/v([\\w.-]+)"
     },
     "autoupdate": {
-        "url": "https://github.com/RSSNext/Follow/releases/download/v$version/Follow-$version-windows-x64.exe#/dl.7z",
-        "hash": {
-            "url": "$baseurl/latest.yml",
-            "regex": "sha512:\\s+$base64"
-        }
+        "url": "https://github.com/RSSNext/Folo/releases/download/v$version/Folo-$version-windows-x64.exe#/dl.7z",
+        "hash": "download"
     }
 }
