@@ -9,14 +9,14 @@
     "url": "https://github.com/RSSNext/Folo/releases/download/v0.3.13/Folo-0.3.13-windows-x64.exe#/dl.7z",
     "hash": "bd8ef3a3702c5fd127ca3e85ed81bd37ebb3a51932ae0a566a83f2015a5d4f9e",
     "pre_install": [
-        "Get-Item \"$dir\\Follow*.nupkg\" | Rename-Item -NewName 'Follow.nupkg'",
-        "Expand-7zipArchive \"$dir\\Follow.nupkg\" \"$dir\" -ExtractDir 'lib\\net45'",
+        "Get-Item \"$dir\\Folo*.nupkg\" | Rename-Item -NewName 'Folo.nupkg'",
+        "Expand-7zipArchive \"$dir\\Folo.nupkg\" \"$dir\" -ExtractDir 'lib\\net45'",
         "Remove-Item \"$dir\\*.gif\", \"$dir\\*.nupkg\", \"$dir\\RELEASES\",  \"$dir\\*.ico\", \"$dir\\Update.exe\" -Force -Recurse"
     ],
-    "bin": "Follow.exe",
+    "bin": "Folo.exe",
     "shortcuts": [
         [
-            "Follow.exe",
+            "Folo.exe",
             "Follow"
         ]
     ],
