@@ -1,0 +1,27 @@
+{
+    "version": "1.4.0",
+    "description": "Transform Your Favorite Websites into Seamless Desktop Experiences✨! 把常用的网站集合到一个桌面程序里。",
+    "homepage": "https://github.com/deepshit2025/tuboshu",
+    "license": "Unknown",
+    "url": "https://github.com/deepshit2025/tuboshu/releases/download/v1.4.0/Tuboshu-Setup-1.4.0-win-x64-portable.exe#/installer.7z",
+    "hash": "57882f7e39e4aa9cfa5a220dbd85abf54cd68a7bd460f7a0c8da3e7644eebecd",
+    "extract_dir": "$PLUGINSDIR",
+    "shortcuts": [
+        [
+            "Tuboshu.exe",
+            "Tuboshu"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/deepshit2025/tuboshu/releases/download/v$version/Tuboshu-Setup-$version-win-x64-portable.exe#/installer.7z",
+        "extract_dir": "$PLUGINSDIR"
+    },
+    "installer": {
+        "script": [
+            "$innerzipfile = Join-Path -Path \"$dir\" -ChildPath \"app-64.7z\"",
+            "7z x -y \"$innerzipfile\" -o\"$dir\" | Out-Null",
+            "Remove-Item -Path \"$innerzipfile\" -Force"
+        ]
+    }
+}
