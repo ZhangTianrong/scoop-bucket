@@ -2,17 +2,19 @@
     "homepage": "https://github.com/NitroRCr/AIaW",
     "description": "AI as Workspace - A better AI (LLM) client. Full-featured, lightweight. Support multiple workspaces, plugin system, cross-platform, local first + real-time cloud sync, Artifacts, MCP | 更好的 AI 客户端",
     "license": "BSD-3-Clause",
-    "version": "1.5.10",
+    "version": "1.5.11",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/NitroRCr/AIaW/releases/download/v1.5.10/AI.as.Workspace_1.5.10_x64-setup.exe#/dl.7z",
-            "hash": "952f6053bda20b33abc17a7bd35755933af0a8297eb412631f842ffa81859ae1"
+            "url": "https://github.com/NitroRCr/AIaW/releases/download/v1.5.11/AI.as.Workspace_1.5.11_x64-setup.exe#/dl.7z",
+            "hash": "e36ac7c06658d77bfa8e0bd428f79ed7f3330ccabae35eb266ac879526db892e"
         }
     },
-    "shortcuts": [[
-        "aiaw.exe",
-        "AIaW"
-    ]],
+    "shortcuts": [
+        [
+            "aiaw.exe",
+            "AIaW"
+        ]
+    ],
     "checkver": "github",
     "installer": {
         "script": [
