@@ -1,11 +1,11 @@
 {
     "homepage": "https://www.dandanplay.com/",
     "description": "A free to use bangumi player with danmaku support",
-    "version": "15.13.0",
+    "version": "15.14.0",
     "license": "Unknown",
     "architecture": {
         "64bit": {
-            "url": "http://lsw-fast.lenovo.com.cn/appstore/apps/adp/pkg/1997-2025-02-17103833-1739759913728.exe#/dandanplay-x64_15.13.0.exe",
+            "url": "http://lsw-fast.lenovo.com.cn/appstore/apps/adp/pkg/1997-2025-02-17103833-1739759913728.exe#/dandanplay-x64_15.14.0.exe",
             "hash": "18dfe3763cec0cc461d99f5ba51aa76e570115b9f275fa8b7e7e82b25016b502"
         }
     },
