@@ -2,7 +2,7 @@
     "description": "Witsy: desktop AI assistant",
     "homepage": "https://github.com/nbonamy/witsy/",
     "license": "Apache-2.0",
-    "version": "2.6.5",
+    "version": "2.7.1",
     "checkver": "github",
     "autoupdate": {
         "architecture": {
@@ -22,12 +22,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/nbonamy/witsy/releases/download/v2.6.5/Witsy-2.6.5-win32-x64.zip",
-            "hash": "b8affaa3b9a1ca64d7f59b276839000ac841f97e65a3cf318d2f4d87ed401d04"
+            "url": "https://github.com/nbonamy/witsy/releases/download/v2.7.1/Witsy-2.7.1-win32-x64.zip",
+            "hash": "d2240f3711692401765ca04e7589c9bcd28324896c101134748977370d6648cc"
         },
         "arm64": {
-            "url": "https://github.com/nbonamy/witsy/releases/download/v2.6.5/Witsy-2.6.5-win32-arm64.zip",
-            "hash": "2d9f02902e83b01b9674dbdba71e6771bf0199405149b838418171eb98dbd57c"
+            "url": "https://github.com/nbonamy/witsy/releases/download/v2.7.1/Witsy-2.7.1-win32-arm64.zip",
+            "hash": "9ac8c441a4f269d9202b88a710efc6682d908881ea8ef8c839d926be827954c8"
         }
     },
     "shortcuts": [
