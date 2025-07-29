@@ -5,7 +5,7 @@
     "license": "Unknown",
     "url": "https://github.com/kingwingfly/fav/releases/download/v1.1.1/fav_bili-v1.1.1-x86_64-pc-windows-msvc.zip",
     "hash": "57888d2a162caa11cc45990100cb400e1543d5a319b8e846fb4a7b8a9988e55e",
-    "bin": "fav.exe",
+    "bin": [["fav_beli.exe", "fav"]],
     "autoupdate": {
         "url": "https://github.com/kingwingfly/fav/releases/download/v$version/fav_bili-v$version-x86_64-pc-windows-msvc.zip",
         "hash": {
