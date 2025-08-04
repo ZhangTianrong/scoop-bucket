@@ -1,9 +1,9 @@
 {
-    "version": "0.19.11",
+    "version": "0.20.0",
     "description": "A cross-platform Markdown note-taking application dedicated to using AI to bridge recording and writing, organizing fragmented knowledge into a readable note.",
     "homepage": "https://github.com/codexu/note-gen",
-    "url": "https://github.com/codexu/note-gen/releases/download/note-gen-v0.19.11/NoteGen_0.19.11_x64_en-US.msi#/note-gen.msi",
-    "hash": "b6d8031d0d5fa26fd69ed65dd1a193c8519265aabfbea6e480210c68340a8595",
+    "url": "https://github.com/codexu/note-gen/releases/download/note-gen-v0.20.0/NoteGen_0.20.0_x64_en-US.msi#/note-gen.msi",
+    "hash": "cd1e1d498f41f704442dcab772229eff8a230fa50eb23b6c240ec304d765ba5d",
     "extract_dir": "PFiles\\NoteGen",
     "checkver": {
         "url": "https://github.com/codexu/note-gen/releases.atom",
