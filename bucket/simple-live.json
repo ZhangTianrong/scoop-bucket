@@ -10,13 +10,5 @@
             "simple_live_app.exe",
             "Simple Live"
         ]
-    ],
-    "checkver": {
-        "url": "https://api.github.com/repositories/607042713/releases/latest",
-        "jsonpath": "$.assets[*].browser_download_url",
-        "regex": "simple_live_app-(?<version>[\\d.]+)%2B(?<build>\\d+)-windows\\.zip"
-    },
-    "autoupdate": {
-        "url": "https://github.com/xiaoyaocz/dart_simple_live/releases/download/v$version/simple_live_app-$version%2B$matchBuild-windows.zip"
-    }
+    ]
 }
