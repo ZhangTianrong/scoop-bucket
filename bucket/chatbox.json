@@ -2,7 +2,7 @@
     "description": "Chatbox is a desktop app for GPT-4 / GPT-3.5 (OpenAI API)",
     "homepage": "https://github.com/Bin-Huang/chatbox",
     "license": "GPL-3.0-only",
-    "version": "1.18.4",
+    "version": "1.19.0",
     "checkver": {
         "url": "https://chatboxai.app/help-center/changelog",
         "regex": "<h2>Changelog</h2>\\s*<a(?:(?!<a|</a>).)*</a>\\s*<h2>v(?<Version>\\d+(\\.\\d+)*(-beta)?)( - [\\d\\.-]+)?</h2>",
@@ -15,7 +15,7 @@
         }
     },
     "url": "https://chatboxai.app/install_chatbox/win64#/setup.7z",
-    "hash": "0234cd327365c9c235971f306449254eef4ac15019b58c6fa610c387fe0e6f0c",
+    "hash": "2139125d78436d3c0bbdbf21ed4fc2a33de53dd3151cae8318b3dada6f48be26",
     "shortcuts": [
         [
             "Chatbox.exe",
