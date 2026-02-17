@@ -1,20 +1,19 @@
 {
-    "version": "20250809",
-    "description": "A fully packaged, easy-to-use version of the mpv with a complete solution (Lazy Bag)",
-    "homepage": "https://github.com/hooke007/MPV_lazy",
+    "version": "20260210",
+    "description": "A fully packaged, easy-to-use version of mpv (Lazy Pack)",
+    "homepage": "https://github.com/hooke007/mpv_PlayKit",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/hooke007/MPV_lazy/releases/download/20250809/mpv-lazy-20250809-vsNV.7z#/vsNV.7z",
-                "https://github.com/hooke007/MPV_lazy/releases/download/20240406/mpv-lazy-20240406-vsLite.7z#/vsLite.7z",
-                "https://github.com/hooke007/MPV_lazy/releases/download/20240406/mpv-lazy-20240406-vsMega.7z#/vsMega.7z"
+                "https://github.com/hooke007/mpv_PlayKit/releases/download/20260210/mpv-lazy-20260210-noVS.7z",
+                "https://github.com/hooke007/mpv_PlayKit/releases/download/20260210/mpv-lazy-20260210-vsNV.7z.001",
+                "https://github.com/hooke007/mpv_PlayKit/releases/download/20260210/mpv-lazy-20260210-vsNV.7z.002"
             ],
             "hash": [
-                "974fce47d03c4f37098de6d261d82b189ab9e14f42f8acea34deb29deb5b9ea1",
-                "456ed44340ea43d23dde7d0211f117c1e1df025c28b63886534478f4fc5b2159",
-                "86002ed7c5faf3374f61020abda8a7d35982794e056544f5ac213b1a8e0c3ed1",
-                "6166e611cb1d3d4c52a78930a154beabb6f209365f9d30df2f7ddd38c5f129d5"
+                "be7898cac9e6c3012c13e9efcd525edfeedf4849e0e325dc895e8d51c0b2f841",
+                "a48d8d199dee0295a5507108988eafa7a94cb85ecfa0287d8b862a7ba3d80a37",
+                "99a51b99b5050d6cdf1557a7433c6fd243f25ff5733a0dbc6f5c4d7c5e998ab7"
             ],
             "extract_dir": "mpv-lazy"
         }
@@ -32,12 +31,36 @@
             "MPV"
         ]
     ],
-    "checkver": "github",
+    "checkver": {
+        "script": [
+            "$releases = Invoke-RestMethod 'https://api.github.com/repos/hooke007/mpv_PlayKit/releases?per_page=100'",
+            "$stable = $releases | Where-Object { -not $_.draft -and -not $_.prerelease }",
+            "$noVsTag = $null",
+            "$vsNvTag = $null",
+            "foreach ($r in $stable) {",
+            "    $tag = $r.tag_name",
+            "    $names = @($r.assets | ForEach-Object { $_.name })",
+            "    if (-not $noVsTag -and ($names -contains \"mpv-lazy-$tag-noVS.7z\")) { $noVsTag = $tag }",
+            "    if (-not $vsNvTag -and ($names -contains \"mpv-lazy-$tag-vsNV.7z.001\") -and ($names -contains \"mpv-lazy-$tag-vsNV.7z.002\")) { $vsNvTag = $tag }",
+            "    if ($noVsTag -and $vsNvTag) { break }",
+            "}",
+            "if (-not $noVsTag) { throw 'No noVS release found.' }",
+            "if (-not $vsNvTag) { throw 'No vsNV 2-part release found.' }",
+            "\"$noVsTag|$vsNvTag\""
+        ],
+        "regex": "(?<version>[\\d.]+)\\|(?<vsnv>[\\d.]+)",
+        "replace": "${version}"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/hooke007/MPV_lazy/releases/download/$version/mpv-lazy-$version-vsNV.7z#/vsNV.7z"
+                "url": [
+                    "https://github.com/hooke007/mpv_PlayKit/releases/download/$version/mpv-lazy-$version-noVS.7z",
+                    "https://github.com/hooke007/mpv_PlayKit/releases/download/$matchVsnv/mpv-lazy-$matchVsnv-vsNV.7z.001",
+                    "https://github.com/hooke007/mpv_PlayKit/releases/download/$matchVsnv/mpv-lazy-$matchVsnv-vsNV.7z.002"
+                ]
             }
         }
     }
 }
+
