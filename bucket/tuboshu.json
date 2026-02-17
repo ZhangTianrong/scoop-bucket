@@ -1,10 +1,10 @@
 {
-    "version": "2.0.8",
+    "version": "2.1.0",
     "description": "Transform Your Favorite Websites into Seamless Desktop Experiences✨! 把常用的网站集合到一个桌面程序里。",
     "homepage": "https://github.com/deepshit2025/tuboshu",
     "license": "Unknown",
-    "url": "https://github.com/deepshit2025/tuboshu/releases/download/v2.0.8/Tuboshu-Setup-2.0.8-win-x64-portable.exe#/installer.7z",
-    "hash": "20eeb5eef3aff619bfb46224ff0d14f7767fc0ad095378060ca8193dfc50fc44",
+    "url": "https://github.com/deepshit2025/tuboshu/releases/download/v2.1.0/Tuboshu-Setup-2.1.0-win-x64.exe#/installer.7z",
+    "hash": "30d6baa5fecf81985434bf575a516bdd211b8d32b076771010b4d01579b333f1",
     "extract_dir": "$PLUGINSDIR",
     "shortcuts": [
         [
@@ -14,7 +14,7 @@
     ],
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/deepshit2025/tuboshu/releases/download/v$version/Tuboshu-Setup-$version-win-x64-portable.exe#/installer.7z",
+        "url": "https://github.com/deepshit2025/tuboshu/releases/download/v$version/Tuboshu-Setup-$version-win-x64.exe#/installer.7z",
         "extract_dir": "$PLUGINSDIR"
     },
     "installer": {
@@ -25,3 +25,4 @@
         ]
     }
 }
+
