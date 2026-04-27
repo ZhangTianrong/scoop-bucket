@@ -14,7 +14,7 @@
         "if (! (test-path \"$dir\\etc\")) { new-item -itemtype directory \"$dir\\etc\" | Out-Null }"
     ],
     "bin": [
-        "bin\awk.exe",
+        "bin\\awk.exe",
         "bin\\basename.exe",
         "bin\\bc.exe",
         "bin\\bison.exe",
