@@ -1,19 +1,19 @@
 {
-    "version": "20260210",
+    "version": "20260510",
     "description": "A fully packaged, easy-to-use version of mpv (Lazy Pack)",
     "homepage": "https://github.com/hooke007/mpv_PlayKit",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/hooke007/mpv_PlayKit/releases/download/20260210/mpv-lazy-20260210-noVS.7z",
-                "https://github.com/hooke007/mpv_PlayKit/releases/download/20260210/mpv-lazy-20260210-vsNV.7z.001",
-                "https://github.com/hooke007/mpv_PlayKit/releases/download/20260210/mpv-lazy-20260210-vsNV.7z.002"
+                "https://github.com/hooke007/mpv_PlayKit/releases/download/20260510/mpv-lazy-20260510-noVS.7z",
+                "https://github.com/hooke007/mpv_PlayKit/releases/download/20260510/mpv-lazy-20260510-vsNV.7z.001",
+                "https://github.com/hooke007/mpv_PlayKit/releases/download/20260510/mpv-lazy-20260510-vsNV.7z.002"
             ],
             "hash": [
-                "be7898cac9e6c3012c13e9efcd525edfeedf4849e0e325dc895e8d51c0b2f841",
-                "a48d8d199dee0295a5507108988eafa7a94cb85ecfa0287d8b862a7ba3d80a37",
-                "99a51b99b5050d6cdf1557a7433c6fd243f25ff5733a0dbc6f5c4d7c5e998ab7"
+                "cd8373316417ddf9a688d3f52aa47e1c67e863aef68cf5dba380c57f41b2c855",
+                "f877973fae54d7cc05451d0369340f5a4ef6c82a2f633c66b786a337d3e6ddda",
+                "1c7303d76f3767f16122c5ea16894add08b6c044ab15d2ccefba6155b8782007"
             ],
             "extract_dir": "mpv-lazy"
         }
@@ -63,4 +63,3 @@
         }
     }
 }
-
