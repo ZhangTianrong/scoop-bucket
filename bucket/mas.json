@@ -7,7 +7,7 @@
         "github": "https://github.com/massgravel/Microsoft-Activation-Scripts"
     },
     "description": "A Windows and Office activator using HWID / KMS38 / Online KMS activation methods, with a focus on open-source code and fewer antivirus detections.",
-    "hash": "3384f7b904e691c94670089162b7634c8d807303ba512be5cdf6d945eafab707",
+    "hash": "344f8060e8df80312001041334d4ded05d529adf9c469a0219e7c7c7796b3384",
     "homepage": "https://massgrave.dev",
     "license": {
         "identifier": "GPL-3.0 license",
