@@ -1,17 +1,17 @@
 {
-    "version": "147.0.4",
+    "version": "152.0.5",
     "description": "Firefox. Popular open source web browser.",
     "homepage": "https://www.mozilla.org/firefox/",
     "license": "MPL-2.0",
-    "changelog": "https://www.mozilla.org/en-US/firefox/147.0.4/releasenotes/",
+    "changelog": "https://www.mozilla.org/en-US/firefox/152.0.5/releasenotes/",
     "architecture": {
         "64bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/releases/147.0.4/win64/en-US/Firefox%20Setup%20147.0.4.exe#/dl.7z",
-            "hash": "sha512:bee69ac202efe308ec10c9cafe8b531045569c7fba57dfed1b1185aca7eb372f214801e511395f7dc71ae6dc336e0757bebce9ccdfc1e60da51e1fd15831e1c4"
+            "url": "https://archive.mozilla.org/pub/firefox/releases/152.0.5/win64/en-US/Firefox%20Setup%20152.0.5.exe#/dl.7z",
+            "hash": "sha512:aa3a99577c2509761ce7aba71ac433c7f280de6687456f96619687ea9546f511be42b63cd1944c4037b0e9d38cc4f6fa7a008632cdcb247b59ad2769fbf4107d"
         },
         "32bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/releases/147.0.4/win32/en-US/Firefox%20Setup%20147.0.4.exe#/dl.7z",
-            "hash": "sha512:132ae03ff9941c134af2798a6210fa750dede7a57792b45c5db41e28b61d8acb8268d20d0e7ce34878a2c2bf94349e8bafdb0c674a7c116ca9f5c902898e4b02"
+            "url": "https://archive.mozilla.org/pub/firefox/releases/152.0.5/win32/en-US/Firefox%20Setup%20152.0.5.exe#/dl.7z",
+            "hash": "sha512:0115f59cc7e7cece566a9247cf896f767fefcfaa7d83452ddab6593167b1dab68d01f4b945887e97a6b3aa28e8ce8b6868ac8c70197472dd7fdbb84603cc9065"
         }
     },
     "extract_dir": "core",
@@ -47,7 +47,7 @@
     ],
     "checkver": {
         "url": "https://www.mozilla.org/en-US/firefox/notes/",
-        "regex": "<span class=\"c-release-version\">([\\d.]+)</span>"
+        "regex": "<span class=\"c-release-version fl-c-release-version fl-heading fl-heading-lg\">([\\d.]+)</span>"
     },
     "autoupdate": {
         "architecture": {
