@@ -1,13 +1,13 @@
 {
-    "version": "2026.08.28",
+    "version": "2026.08.29",
     "description": "The Programmers Solid 3D CAD Modeller (Development Snapshot)",
     "homepage": "https://www.openscad.org/",
     "license": "GPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://files.openscad.org/snapshots/OpenSCAD-2026.08.28-x86-64.zip",
-            "hash": "8351ba9cd092fdfecbdf89ff4cd34037321c7b170367dbbcaf718d4e5c85ef24",
-            "extract_dir": "openscad-2026.08.28-x86-64"
+            "url": "https://files.openscad.org/snapshots/OpenSCAD-2026.08.29-x86-64.zip",
+            "hash": "9378d35cfe0123b8bfb9bf98d895f6af3d17fd4aad19c649caae640e65a2c0a3",
+            "extract_dir": "openscad-2026.08.29-x86-64"
         }
     },
     "post_install": [
