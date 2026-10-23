@@ -1,13 +1,13 @@
 {
-    "version": "2.32.0",
+    "version": "2.33.0",
     "description": "Send push notifications to your phone or desktop via PUT/POST",
     "homepage": "https://ntfy.sh",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/binwiederhier/ntfy/releases/download/v2.32.0/ntfy_2.32.0_windows_amd64.zip",
-            "hash": "f03eacd89d065a693d9a219d62dca4cbbe9ee7d06377db91be725fa789e57a63",
-            "extract_dir": "ntfy_2.32.0_windows_amd64"
+            "url": "https://github.com/binwiederhier/ntfy/releases/download/v2.33.0/ntfy_2.33.0_windows_amd64.zip",
+            "hash": "5efe617180d6d864e480c33847a4981de1b8ab4fc58d7ae591dd09b9ac497681",
+            "extract_dir": "ntfy_2.33.0_windows_amd64"
         }
     },
     "bin": "ntfy.exe",
