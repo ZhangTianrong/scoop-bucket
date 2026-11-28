@@ -32,8 +32,9 @@
         ]
     ],
     "checkver": {
+        "github": "https://api.github.com/repos/hooke007/mpv_PlayKit/releases?per_page=100",
         "script": [
-            "$releases = Invoke-RestMethod 'https://api.github.com/repos/hooke007/mpv_PlayKit/releases?per_page=100'",
+            "$releases = $page | ConvertFrom-Json",
             "$stable = $releases | Where-Object { -not $_.draft -and -not $_.prerelease }",
             "$noVsTag = $null",
             "$vsNvTag = $null",

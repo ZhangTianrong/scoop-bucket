@@ -17,7 +17,7 @@
     ],
     "checkver": {
         "url": "https://files.openscad.org/snapshots/.snapshot_win64.js",
-        "regex": "'WIN64_SNAPSHOT_ZIP', 'OpenSCAD-([\\d\\.-]+)'"
+        "regex": "'WIN64_ZIP_SNAPSHOT', 'OpenSCAD-([\\d\\.-]+)'"
     },
     "autoupdate": {
         "architecture": {
