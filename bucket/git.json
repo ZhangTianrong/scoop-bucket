@@ -41,8 +41,9 @@
         "GIT_INSTALL_ROOT": "$dir"
     },
     "checkver": {
-        "url": "https://api.github.com/repos/git-for-windows/git/releases/latest",
-        "regex": "v([\\w.]+)/PortableGit-(?<full>[\\w.]+)-64-bit"
+        "github": "https://api.github.com/repos/git-for-windows/git/releases/latest",
+        "regex": "v([\\w.]+)/PortableGit-(?<full>[\\w.]+)-64-bit",
+        "jsonpath": "$.assets[*].browser_download_url"
     },
     "autoupdate": {
         "architecture": {

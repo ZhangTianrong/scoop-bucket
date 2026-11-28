@@ -5,7 +5,8 @@
     "version": "8.0.18+341",
     "depends": "jq",
     "checkver": {
-        "script": "(Invoke-WebRequest -Uri 'https://api.github.com/repos/jiangtian616/JHenTai/releases/latest').Content | jq -r '.assets[] | select(.name | endswith(\"Windows.zip\")) | (.name + \"以及\" + .browser_download_url)'",
+        "github": "https://github.com/jiangtian616/JHenTai",
+        "script": "$page | jq -r '.assets[] | select(.name | endswith(\"Windows.zip\")) | (.name + \"以及\" + .browser_download_url)'",
         "regex": "JHenTai_(?<Version>\\d+(\\.\\d+)*(\\+\\d+)?)_Windows\\.zip以及(?<URL>.*)$",
         "replace": "${Version}"
     },

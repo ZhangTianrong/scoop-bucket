@@ -1,17 +1,19 @@
 {
-    "version": "4.1.1",
+    "version": "4.3.0",
     "description": "Universal proxy client that routes Windows TCP/UDP traffic through SOCKS5/HTTP proxies",
     "homepage": "https://github.com/InterceptSuite/ProxyBridge",
     "license": "MIT",
-    "url": "https://github.com/InterceptSuite/ProxyBridge/releases/download/v4.1.1/ProxyBridge-Setup-4.1.1.exe#/dl.7z",
-    "hash": "754f45fb31f3953b9b81005090f9a479f89827adb628cf2c76bc4139f673a152",
+    "url": "https://github.com/InterceptSuite/ProxyBridge/releases/download/v4.3.0_Windows/ProxyBridge-Setup-4.3.0.exe#/dl.7z",
+    "hash": "64992b813e4b406466540f7cc01332ef90ffe3b234719694347175fd85a3f1f9",
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Force -Recurse -ErrorAction SilentlyContinue",
     "checkver": {
-        "url": "https://api.github.com/repos/InterceptSuite/ProxyBridge/releases/latest",
-        "regex": "download/v(?<tag>[\\d.]+)/ProxyBridge-Setup-(?<version>[\\d.]+)\\.exe"
+        "github": "https://api.github.com/repos/InterceptSuite/ProxyBridge/releases?per_page=100",
+        "jsonpath": "$..browser_download_url",
+        "regex": "download/(?<tag>v[\\d.]+(?:_Windows)?)/ProxyBridge-Setup-(?<version>[\\d.]+)\\.exe",
+        "replace": "${version}"
     },
     "autoupdate": {
-        "url": "https://github.com/InterceptSuite/ProxyBridge/releases/download/v$matchTag/ProxyBridge-Setup-$version.exe#/dl.7z"
+        "url": "https://github.com/InterceptSuite/ProxyBridge/releases/download/$matchTag/ProxyBridge-Setup-$version.exe#/dl.7z"
     },
     "bin": [
         "ProxyBridge.exe",

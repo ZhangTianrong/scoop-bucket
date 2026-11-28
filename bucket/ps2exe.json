@@ -1,10 +1,10 @@
 {
-    "version": "1.0.17",
+    "version": "1.0.18",
     "description": "PowerShell module that compiles Powershell scripts to executables",
     "homepage": "https://github.com/MScholtes/PS2EXE",
     "license": "MS-LPL",
-    "url": "https://psg-prod-eastus.azureedge.net/packages/ps2exe.1.0.17.nupkg",
-    "hash": "d50b02f136d277a617aef270ed1ecaa6505e3d899ef3cd19cdc2c456dd1cf17b",
+    "url": "https://www.powershellgallery.com/api/v2/package/ps2exe/1.0.18#/ps2exe.1.0.18.nupkg",
+    "hash": "692124163d0e71262d76e2f2b2588e1661df28a8f0cf3b1725e47a957afce39f",
     "psmodule": {
         "name": "ps2exe"
     },
@@ -14,7 +14,7 @@
         "hash": "download"
     },
     "autoupdate": {
-        "url": "https://psg-prod-eastus.azureedge.net/packages/ps2exe.$version.nupkg"
+        "url": "https://www.powershellgallery.com/api/v2/package/ps2exe/$version#/ps2exe.$version.nupkg"
     },
     "pre_install": [
         "if ($PSVersionTable.PSVersion.Major -gt 5) { # When in Powershell Core",

@@ -16,7 +16,8 @@
         "Remove-Item \"$dir/wslcompact\" -Recurse -Force"
     ],
     "checkver": {
-        "github": "https://api.github.com/repos/okibcn/wslcompact",
+        "github": "https://github.com/okibcn/wslcompact",
+        "jsonpath": "$.assets[*].browser_download_url",
         "regex": "v([\\d\\.\\-]+)\\.zip"
     },
     "autoupdate": {
